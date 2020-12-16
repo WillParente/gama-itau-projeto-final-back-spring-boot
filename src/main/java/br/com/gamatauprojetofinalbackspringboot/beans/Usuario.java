@@ -1,4 +1,4 @@
-package br.com.projetofinal.model;
+package br.com.gamatauprojetofinalbackspringboot.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity //indica para o Spring que esta classe terá um correspondente no BD
-@Table(name="tb_usuario")
+@Table(name="mtb310__usuario")
 
 public class Usuario {
 

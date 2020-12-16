@@ -1,4 +1,4 @@
-package br.com.projetofinal.model;
+package br.com.gamatauprojetofinalbackspringboot.beans;
 
 import java.util.Date;
 
