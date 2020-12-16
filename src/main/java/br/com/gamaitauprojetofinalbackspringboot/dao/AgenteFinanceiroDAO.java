@@ -1,8 +1,8 @@
-package br.com.gamatauprojetofinalbackspringboot.dao;
+package br.com.gamaitauprojetofinalbackspringboot.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.gamatauprojetofinalbackspringboot.beans.AgenteFinanceiro;
+import br.com.gamaitauprojetofinalbackspringboot.beans.AgenteFinanceiro;
 
 public interface AgenteFinanceiroDAO extends CrudRepository<AgenteFinanceiro, Integer>  {
 

@@ -1,4 +1,4 @@
-package br.com.gamatauprojetofinalbackspringboot.beans;
+package br.com.gamaitauprojetofinalbackspringboot.beans;
 
 import java.util.List;
 
@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.transaction.Transaction;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

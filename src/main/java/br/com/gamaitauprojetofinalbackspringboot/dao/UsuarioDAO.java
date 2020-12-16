@@ -1,8 +1,8 @@
-package br.com.gamatauprojetofinalbackspringboot.dao;
+package br.com.gamaitauprojetofinalbackspringboot.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.gamatauprojetofinalbackspringboot.beans.Usuario;
+import br.com.gamaitauprojetofinalbackspringboot.beans.Usuario;
 
 public interface UsuarioDAO extends CrudRepository<Usuario, Integer> {
 		

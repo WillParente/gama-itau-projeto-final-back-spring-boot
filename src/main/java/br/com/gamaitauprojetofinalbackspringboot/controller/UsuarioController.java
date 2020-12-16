@@ -1,4 +1,4 @@
-package br.com.gamatauprojetofinalbackspringboot.controller;
+package br.com.gamaitauprojetofinalbackspringboot.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.gamatauprojetofinalbackspringboot.beans.Usuario;
-import br.com.gamatauprojetofinalbackspringboot.dao.UsuarioDAO;
+import br.com.gamaitauprojetofinalbackspringboot.beans.Usuario;
+import br.com.gamaitauprojetofinalbackspringboot.dao.UsuarioDAO;
 
 @RestController
 @CrossOrigin("*")

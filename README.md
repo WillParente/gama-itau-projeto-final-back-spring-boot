@@ -1,1 +1,1 @@
-# gamaI-tau-projeto-fiinal-web-service
+# Gama/Itau - Projeto Final - Backend - Spring Boot

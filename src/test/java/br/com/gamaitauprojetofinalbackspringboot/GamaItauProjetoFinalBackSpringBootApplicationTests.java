@@ -1,10 +1,10 @@
-package br.com.gamatauprojetofinalbackspringboot;
+package br.com.gamaitauprojetofinalbackspringboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GamaTauProjetoFinalBackSpringBootApplicationTests {
+class GamaItauProjetoFinalBackSpringBootApplicationTests {
 
 	@Test
 	void contextLoads() {

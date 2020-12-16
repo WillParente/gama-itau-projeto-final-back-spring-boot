@@ -1,4 +1,4 @@
-package br.com.gamatauprojetofinalbackspringboot.controller;
+package br.com.gamaitauprojetofinalbackspringboot.controller;
 
 import java.util.List;
 
@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.gamatauprojetofinalbackspringboot.beans.AgenteFinanceiro;
-import br.com.gamatauprojetofinalbackspringboot.dao.AgenteFinanceiroDAO;
+import br.com.gamaitauprojetofinalbackspringboot.beans.Transaction;
+import br.com.gamaitauprojetofinalbackspringboot.dao.TransactionDAO;
 
 @RestController
 @CrossOrigin("*")
-public class AgenteFinanceiroController {
-		
+public class TransactionController {
+
 		@Autowired
-		private AgenteFinanceiroDAO dao;
+		private TransactionDAO dao;
 		
-		@GetMapping("/agentes")
-		public ResponseEntity<List<AgenteFinanceiro>> findAll(){
-			List<AgenteFinanceiro> lista = (List<AgenteFinanceiro>)dao.findAll();
+		@GetMapping("/transactions")
+		public ResponseEntity<List<Transaction>> findAll(){
+			List<Transaction> lista = (List<Transaction>)dao.findAll();
 			if(lista.size() == 0) {
 				return ResponseEntity.status(404).build();
 			}
