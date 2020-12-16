@@ -40,8 +40,8 @@ public class Transaction {
 	@Column(name="status")
 	private int status;
 	
+	@JsonIgnoreProperties("transactions")
 	@ManyToOne
-	@JsonIgnoreProperties("ag_financeiro")
 	private AgenteFinanceiro ag_financeiro;
 
 	public Transaction(int id, Date data_hora, int dispositivo, float valor_solic, float valor_aut, int status,
