@@ -27,17 +27,18 @@ public class AgenteFinanceiro {
 	private String nome_agente;
 	
 	@Column(name="volume_transacional")
-	private float valor_solic;
+	private float volume_transacional;
 	
 	@OneToMany(mappedBy="ag_financeiro", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("ag_financeiro")
 	private List<Transaction> transactions;
 
-	public AgenteFinanceiro(int id_agente, String nome_agente, float valor_solic, List<Transaction> transactions) {
+	public AgenteFinanceiro(int id_agente, String nome_agente, float volume_transacional,
+			List<Transaction> transactions) {
 		super();
 		this.id_agente = id_agente;
 		this.nome_agente = nome_agente;
-		this.valor_solic = valor_solic;
+		this.volume_transacional = volume_transacional;
 		this.transactions = transactions;
 	}
 
@@ -61,12 +62,12 @@ public class AgenteFinanceiro {
 		this.nome_agente = nome_agente;
 	}
 
-	public float getValor_solic() {
-		return valor_solic;
+	public float getVolume_transacional() {
+		return volume_transacional;
 	}
 
-	public void setValor_solic(float valor_solic) {
-		this.valor_solic = valor_solic;
+	public void setVolume_transacional(float volume_transacional) {
+		this.volume_transacional = volume_transacional;
 	}
 
 	public List<Transaction> getTransactions() {
@@ -79,9 +80,8 @@ public class AgenteFinanceiro {
 
 	@Override
 	public String toString() {
-		return "AgenteFinanceiro [id_agente=" + id_agente + ", nome_agente=" + nome_agente + ", valor_solic="
-				+ valor_solic + ", transactions=" + transactions + "]";
+		return "AgenteFinanceiro [id_agente=" + id_agente + ", nome_agente=" + nome_agente + ", volume_transacional="
+				+ volume_transacional + ", transactions=" + transactions + "]";
 	}
-
 	
 }
