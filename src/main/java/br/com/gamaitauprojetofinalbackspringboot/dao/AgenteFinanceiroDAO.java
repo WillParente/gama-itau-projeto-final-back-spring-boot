@@ -9,11 +9,8 @@ import br.com.gamaitauprojetofinalbackspringboot.beans.AgenteFinanceiro;
 
 public interface AgenteFinanceiroDAO extends CrudRepository<AgenteFinanceiro, Integer>  {
 	
-	@Query(value= "SELECT ag.id_agente, ag.nome_agente, ag.volume_transacional, COUNT(id_transaction) AS TOTAL "
-			+ "FROM mtb310_transaction tr "
-			+ "JOIN mtb310_ag_financeiro ag ON ag.id_agente = tr.ag_financeiro_id_agente "
-			+ "group by (ag_financeiro_id_agente) "
-			+ "ORDER BY TOTAL DESC "
+	@Query(value= "SELECT ag.id_agente, ag.nome_agente, ag.volume_transacional FROM mtb310_ag_financeiro "
+			+ "ORDER BY volume_transacional DESC "
 			+ "LIMIT 10;", nativeQuery=true)
 	public List<AgenteFinanceiro> findTopTen();
 	

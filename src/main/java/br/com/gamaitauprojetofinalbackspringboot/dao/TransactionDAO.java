@@ -11,12 +11,12 @@ public interface TransactionDAO extends CrudRepository<Transaction, Integer>{
 	@Query(value= "SELECT COUNT(id_transaction) AS TOTAL FROM mtb310_transaction WHERE ag_financeiro_id_agente = :num", nativeQuery=true)
 	public int findByTotalTransactons(@Param("num") int num);
 	
-	@Query(value= "SELECT COUNT(id_transaction) AS TOTAL FROM mtb310_transaction WHERE ag_financeiro_id_agente = :num AND ", nativeQuery=true)
+	@Query(value= "SELECT COUNT(id_transaction) AS TOTAL FROM mtb310_transaction WHERE ag_financeiro_id_agente = :num AND status=0", nativeQuery=true)
 	public int findByTotalSucesso(@Param("num") int num);
 	
-	@Query(value= "SELECT COUNT(id_transaction) AS TOTAL FROM mtb310_transaction WHERE ag_financeiro_id_agente = :num", nativeQuery=true)
+	@Query(value= "SELECT COUNT(id_transaction) AS TOTAL FROM mtb310_transaction WHERE ag_financeiro_id_agente = :num AND status=1", nativeQuery=true)
 	public int findByTotalFalhas(@Param("num") int num);
 	
-	@Query(value= "SELECT COUNT(id_transaction) AS TOTAL FROM mtb310_transaction WHERE ag_financeiro_id_agente = :num", nativeQuery=true)
+	@Query(value= "SELECT COUNT(id_transaction) AS TOTAL FROM mtb310_transaction WHERE ag_financeiro_id_agente = :num AND status=2", nativeQuery=true)
 	public int findByTotalFraudes(@Param("num") int num);
 }
