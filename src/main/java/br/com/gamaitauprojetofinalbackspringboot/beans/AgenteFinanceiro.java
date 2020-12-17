@@ -21,7 +21,7 @@ public class AgenteFinanceiro {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_agente")
-	private int id;
+	private int id_agente;
 	
 	@Column(name="nome_agente", length=100)
 	private String nome_agente;
@@ -33,9 +33,9 @@ public class AgenteFinanceiro {
 	@JsonIgnoreProperties("ag_financeiro")
 	private List<Transaction> transactions;
 
-	public AgenteFinanceiro(int id, String nome_agente, float valor_solic, List<Transaction> transactions) {
+	public AgenteFinanceiro(int id_agente, String nome_agente, float valor_solic, List<Transaction> transactions) {
 		super();
-		this.id = id;
+		this.id_agente = id_agente;
 		this.nome_agente = nome_agente;
 		this.valor_solic = valor_solic;
 		this.transactions = transactions;
@@ -45,12 +45,12 @@ public class AgenteFinanceiro {
 		super();
 	}
 
-	public int getId() {
-		return id;
+	public int getId_agente() {
+		return id_agente;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId_agente(int id_agente) {
+		this.id_agente = id_agente;
 	}
 
 	public String getNome_agente() {
@@ -79,7 +79,9 @@ public class AgenteFinanceiro {
 
 	@Override
 	public String toString() {
-		return "AgenteFinanceiro [id=" + id + ", nome_agente=" + nome_agente + ", valor_solic=" + valor_solic
-				+ ", transactions=" + transactions + "]";
+		return "AgenteFinanceiro [id_agente=" + id_agente + ", nome_agente=" + nome_agente + ", valor_solic="
+				+ valor_solic + ", transactions=" + transactions + "]";
 	}
+
+	
 }

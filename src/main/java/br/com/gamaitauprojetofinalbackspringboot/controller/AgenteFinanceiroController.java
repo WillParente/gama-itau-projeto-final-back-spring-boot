@@ -26,4 +26,13 @@ public class AgenteFinanceiroController {
 			}
 			return ResponseEntity.ok(lista);
 		}
+		
+		@GetMapping("/topagentes")
+		public ResponseEntity<List<AgenteFinanceiro>> findTopTen(){
+			List<AgenteFinanceiro> lista = (List<AgenteFinanceiro>)dao.findTopTen();
+			if(lista.size() == 0) {
+				return ResponseEntity.status(404).build();
+			}
+			return ResponseEntity.ok(lista);
+		}
 }

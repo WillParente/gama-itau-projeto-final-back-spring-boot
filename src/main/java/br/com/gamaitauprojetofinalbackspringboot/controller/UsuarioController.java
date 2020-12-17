@@ -22,8 +22,13 @@ public class UsuarioController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<Usuario> logar(@RequestBody Usuario objeto){
-		Usuario resposta = dao.findByEmailAndSenha(objeto.getEmail(), objeto.getSenha());
-		if(resposta==null) {
+		Usuario resposta;
+		if(objeto.getRacf() == null) {
+			resposta = dao.findByEmailAndSenha(objeto.getEmail(), objeto.getSenha());			
+		} else {
+			resposta = dao.findByRacfAndSenha(objeto.getRacf(), objeto.getSenha());
+		}
+		if(resposta == null) {
 			return ResponseEntity.status(404).build();
 		}
 		return ResponseEntity.ok(resposta);

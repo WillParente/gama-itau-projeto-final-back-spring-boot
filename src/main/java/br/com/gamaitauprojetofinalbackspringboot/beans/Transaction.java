@@ -22,7 +22,7 @@ public class Transaction {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_transaction")
-	private int id;
+	private int id_transaction;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="data_hora")
@@ -44,10 +44,10 @@ public class Transaction {
 	@ManyToOne
 	private AgenteFinanceiro ag_financeiro;
 
-	public Transaction(int id, Date data_hora, int dispositivo, float valor_solic, float valor_aut, int status,
-			AgenteFinanceiro ag_financeiro) {
+	public Transaction(int id_transaction, Date data_hora, int dispositivo, float valor_solic, float valor_aut,
+			int status, AgenteFinanceiro ag_financeiro) {
 		super();
-		this.id = id;
+		this.id_transaction = id_transaction;
 		this.data_hora = data_hora;
 		this.dispositivo = dispositivo;
 		this.valor_solic = valor_solic;
@@ -60,12 +60,12 @@ public class Transaction {
 		super();
 	}
 
-	public int getId() {
-		return id;
+	public int getId_transaction() {
+		return id_transaction;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId_transaction(int id_transaction) {
+		this.id_transaction = id_transaction;
 	}
 
 	public Date getData_hora() {
@@ -118,9 +118,10 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return "Transaction [id=" + id + ", data_hora=" + data_hora + ", dispositivo=" + dispositivo + ", valor_solic="
-				+ valor_solic + ", valor_aut=" + valor_aut + ", status=" + status + ", ag_financeiro=" + ag_financeiro
-				+ "]";
+		return "Transaction [id_transaction=" + id_transaction + ", data_hora=" + data_hora + ", dispositivo="
+				+ dispositivo + ", valor_solic=" + valor_solic + ", valor_aut=" + valor_aut + ", status=" + status
+				+ ", ag_financeiro=" + ag_financeiro + "]";
 	}
+
 	
 }
