@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.gamaitauprojetofinalbackspringboot.beans.AgenteFinanceiro;
@@ -38,7 +38,7 @@ public class AgenteFinanceiroController {
 		}
 		
 		@GetMapping("/agente/{id}")
-		public ResponseEntity<AgenteFinanceiro> getAgente(@RequestBody int id){
+		public ResponseEntity<AgenteFinanceiro> getAgente(@PathVariable int id){
 			AgenteFinanceiro agente = dao.findById(id).orElse(null);
 			if (agente == null) {
 				return ResponseEntity.status(404).build();
