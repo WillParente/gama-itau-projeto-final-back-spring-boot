@@ -38,8 +38,8 @@ public class AgenteFinanceiroController {
 		}
 		
 		@GetMapping("/agente/{id}")
-		public ResponseEntity<AgenteFinanceiro> getAgente(@RequestBody AgenteFinanceiro objeto){
-			AgenteFinanceiro agente = dao.findById(objeto.getId_agente()).orElse(null);
+		public ResponseEntity<AgenteFinanceiro> getAgente(@RequestBody int id){
+			AgenteFinanceiro agente = dao.findById(id).orElse(null);
 			if (agente == null) {
 				return ResponseEntity.status(404).build();
 			}
