@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.gamaitauprojetofinalbackspringboot.beans.AgenteFinanceiro;
@@ -34,5 +35,14 @@ public class AgenteFinanceiroController {
 				return ResponseEntity.status(404).build();
 			}
 			return ResponseEntity.ok(lista);
+		}
+		
+		@GetMapping("/agente/{id}")
+		public ResponseEntity<AgenteFinanceiro> getAgente(@RequestBody AgenteFinanceiro objeto){
+			AgenteFinanceiro agente = dao.findById(objeto.getId_agente()).orElse(null);
+			if (agente == null) {
+				return ResponseEntity.status(404).build();
+			}
+			return ResponseEntity.ok(agente);
 		}
 }
